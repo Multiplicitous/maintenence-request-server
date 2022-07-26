@@ -3,7 +3,6 @@ package com.miller.adrian.maintencerequestserver.domain.maintenceRequest.models;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
@@ -14,8 +13,11 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class MaintenceRequest {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NonNull
     private String firstName;
     @NonNull
@@ -26,6 +28,7 @@ public class MaintenceRequest {
     private String aptNum;
     @NonNull
     private String description;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
 
